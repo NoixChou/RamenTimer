@@ -1,24 +1,31 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RamenTimer.MainPage">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        <Frame BackgroundColor="#cfb50c" Padding="24" CornerRadius="0">
+            <Label Text="ラーメン作るぞ！" HorizontalTextAlignment="Center" TextColor="#690407" FontSize="36" />
         </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+        <Grid VerticalOptions="CenterAndExpand" ColumnSpacing="5" RowSpacing="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="ThreeMinButton" Clicked="ThreeMinButton_OnClicked" Grid.Row="0" Grid.Column="0" Text="3分" FontSize="32" BackgroundColor="#4472c3" TextColor="White" />
+            <Button x:Name="FiveMinButton" Clicked="FiveMinButton_OnClicked" Grid.Row="0" Grid.Column="1" Text="5分" FontSize="32" BackgroundColor="#4472c3" TextColor="White" />
+            <Button x:Name="OneMinButton" Clicked="OneMinButton_OnClicked" Grid.Row="1" Grid.Column="0"  Text="1分" FontSize="16" BackgroundColor="#5895ff" TextColor="White" />
+            <Button x:Name="FourMinButton" Clicked="FourMinButton_OnClicked" Grid.Row="1" Grid.Column="1" Text="4分" FontSize="16" BackgroundColor="#5895ff" TextColor="White" />
+        </Grid>
     </StackLayout>
 
 </ContentPage>

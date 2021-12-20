@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:locals="clr-namespace:RamenTimer;assembly=RamenTimer" x:DataType="locals:TimerViewModel"
+             x:Class="RamenTimer.Timer">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid VerticalOptions="CenterAndExpand" ColumnSpacing="5" RowSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding RemainTimeLabel}" FontSize="46" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                <Button x:Name="StopButton" Clicked="StopButton_OnClicked" Grid.Row="0" Grid.Column="1" Text="停止" FontSize="32" BackgroundColor="#430305" TextColor="White" />
+                <Button x:Name="DecreaseOneMinute" Clicked="DecreaseOneMinute_OnClicked" Grid.Row="1" Grid.Column="0" Text="-1:00" FontSize="24" CornerRadius="30" BackgroundColor="#5895ff" TextColor="White" />
+                <Button x:Name="IncreaseOneMinute" Clicked="IncreaseOneMinute_OnClicked" Grid.Row="1" Grid.Column="2" Text="+1:00" FontSize="24" CornerRadius="30" BackgroundColor="#5895ff" TextColor="White" />
+                <Button x:Name="DecreaseHalfMinute" Clicked="DecreaseHalfMinute_OnClicked" Grid.Row="2" Grid.Column="0" Text="-0:30" FontSize="16" CornerRadius="24" BackgroundColor="#5895ff" TextColor="White" />
+                <Button x:Name="IncreaseHalfMinute" Clicked="IncreaseHalfMinute_OnClicked" Grid.Row="2" Grid.Column="2" Text="+0:30" FontSize="16" CornerRadius="24" BackgroundColor="#5895ff" TextColor="White" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

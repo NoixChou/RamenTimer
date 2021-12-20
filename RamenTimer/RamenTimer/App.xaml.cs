@@ -10,7 +10,7 @@ namespace RamenTimer
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new RamenTimer.MainPage());
         }
 
         protected override void OnStart()

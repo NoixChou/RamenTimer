@@ -14,5 +14,30 @@ namespace RamenTimer
         {
             InitializeComponent();
         }
+
+        private void StartTimer(uint second)
+        {
+            Navigation.PushAsync(new Timer(second * 1000));
+        }
+
+        private void ThreeMinButton_OnClicked(object sender, EventArgs e)
+        {
+            StartTimer(180);
+        }
+
+        private void FiveMinButton_OnClicked(object sender, EventArgs e)
+        {
+            StartTimer(300);
+        }
+
+        private void OneMinButton_OnClicked(object sender, EventArgs e)
+        {
+            StartTimer(60);
+        }
+
+        private void FourMinButton_OnClicked(object sender, EventArgs e)
+        {
+            StartTimer(240);
+        }
     }
 }
