@@ -8,8 +8,8 @@
              x:Class="RamenTimer.MainPage">
 
     <StackLayout>
-        <Frame BackgroundColor="#cfb50c" Padding="24" CornerRadius="0">
-            <Label Text="ラーメン作るぞ！" HorizontalTextAlignment="Center" TextColor="#690407" FontSize="36" />
+        <Frame BackgroundColor="#9d080c" Padding="24" CornerRadius="0">
+            <Label Text="ラーメン作るぞ！" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" />
         </Frame>
         <Grid VerticalOptions="CenterAndExpand" ColumnSpacing="5" RowSpacing="30">
             <Grid.RowDefinitions>

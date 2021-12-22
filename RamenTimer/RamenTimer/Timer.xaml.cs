@@ -22,6 +22,11 @@ namespace RamenTimer
             BindingContext = timerViewModel;
         }
 
+        ~Timer()
+        {
+            timerViewModel = null;
+        }
+
         private void DecreaseTimerRemain(uint amountSecond)
         {
             timerViewModel.DecreaseRemain(amountSecond * 1000);

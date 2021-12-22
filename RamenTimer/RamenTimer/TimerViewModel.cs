@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Globalization;
 using System.Text;
 
 namespace RamenTimer
@@ -24,7 +25,7 @@ namespace RamenTimer
                     RemainTimeMillisecond = 0;
                     return false;
                 }
-
+                
                 RemainTimeMillisecond -= (uint)elapsed;
                 return true;
             });
@@ -38,14 +39,18 @@ namespace RamenTimer
             {
                 _remainTimeMillisecond = value;
 
-                var format = @"mm\:ss";
+                var format = "mm:ss";
 
                 if (_remainTimeMillisecond >= 3600000)
                 {
-                    format = @"hh\:mm\:ss";
+                    format = "hh:mm:ss";
                 }
 
-                RemainTimeLabel = TimeSpan.FromMilliseconds(RemainTimeMillisecond).ToString(format);
+                var span = TimeSpan.FromSeconds(RemainTimeMillisecond / 1000d);
+                format = format.Replace("hh", Math.Floor(span.TotalHours).ToString("00"));
+                format = format.Replace("mm", span.Minutes.ToString("00"));
+                format = format.Replace("ss", span.Seconds.ToString("00"));
+                RemainTimeLabel = format;
             }
         }
         private DateTime _latestDateTime = DateTime.Now;
